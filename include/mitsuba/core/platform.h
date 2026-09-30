@@ -36,7 +36,7 @@
     #define _CRT_NONSTDC_NO_DEPRECATE
     #define _CRT_SECURE_NO_DEPRECATE
 
-    #define _WIN32_WINNT 0x0501 // Windows XP
+    // #define _WIN32_WINNT 0x0501 // Windows XP
     #define NOMINMAX
     #define WIN32_LEAN_AND_MEAN
 
@@ -212,8 +212,10 @@ MTS_NAMESPACE_END
 
 #include <float.h>
 
+#if _MSC_VER < 1900
 #define snprintf _snprintf
 #define vsnprintf _vsnprintf
+#endif
 
 namespace mitsuba {
 #if defined(__64BIT__)

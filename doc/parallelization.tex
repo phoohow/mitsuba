@@ -48,12 +48,12 @@ public:
 MTS_EXPORT_UTILITY(ROT13Encoder, "Perform a ROT13 encryption of a string")
 MTS_NAMESPACE_END
 \end{cpp}
-The file must also be added to the build system: insert the line
+The file must also be added to the build system: add the line
 \begin{shell}
-plugins += $\texttt{env}$.SharedLibrary('rot13', ['rot13.cpp'])
+mitsuba_add_plugin(rot13 "${CMAKE_CURRENT_SOURCE_DIR}/rot13.cpp")
 \end{shell}
-into the \code{utils/SConscript} file. After compiling
-using \code{scons}, the \code{mtsutil} binary should automatically pick up your new utility plugin:
+to \code{src/utils/CMakeLists.txt}. After compiling with \code{cmake --build build},
+the \code{mtsutil} binary should automatically pick up your new utility plugin:
 \begin{shell}
 $\texttt{\$}$ mtsutil
 ..
@@ -302,7 +302,7 @@ from the main utility function (the `Hello World' code we wrote earlier). We can
         return 0;
     }
 \end{cpp}
-After compiling everything using \code{scons}, a simple example
+After compiling everything using \code{cmake --build build}, a simple example
 involving the utility would be to encode a string (e.g. \code{SECUREBYDESIGN}), while
 forwarding all computation to a network machine. (\code{-p0} disables
 all local worker threads). Adding a verbose flag (\code{-v}) shows

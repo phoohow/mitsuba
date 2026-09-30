@@ -21,6 +21,7 @@
 #include <mitsuba/core/statistics.h>
 #include <mitsuba/core/sched.h>
 #include <mitsuba/core/lrucache.h>
+#include <boost/bind/placeholders.hpp>
 #include <fstream>
 
 MTS_NAMESPACE_BEGIN
@@ -31,7 +32,11 @@ static StatsCounter statsDestruct("Volume cache", "Block destructions");
 static StatsCounter statsEmpty("Volume cache", "Empty blocks", EPercentage);
 
 /* Lexicographic ordering for Vector3i */
-struct Vector3iKeyOrder : public std::binary_function<Vector3i, Vector3i, bool> {
+struct Vector3iKeyOrder {
+    typedef Vector3i first_argument_type;
+    typedef Vector3i second_argument_type;
+    typedef bool result_type;
+
     inline bool operator()(const Vector3i &v1, const Vector3i &v2) const {
         if (v1.x < v2.x) return true;
         else if (v1.x > v2.x) return false;
@@ -177,8 +182,8 @@ public:
         BlockCache *cache = m_cache.get();
         if (EXPECT_NOT_TAKEN(cache == NULL)) {
             cache = new BlockCache(m_blocksPerCore,
-                boost::bind(&CachingDataSource::renderBlock, this, _1),
-                boost::bind(&CachingDataSource::destroyBlock, this, _1));
+                boost::bind(&CachingDataSource::renderBlock, this, boost::placeholders::_1),
+                boost::bind(&CachingDataSource::destroyBlock, this, boost::placeholders::_1));
             m_cache.set(cache);
         }
 

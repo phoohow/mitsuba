@@ -20,6 +20,7 @@
 #if !defined(__MITSUBA_RENDER_GKDTREE_H_)
 #define __MITSUBA_RENDER_GKDTREE_H_
 
+#include <functional>
 #include <mitsuba/core/timer.h>
 #include <mitsuba/core/lock.h>
 #include <boost/static_assert.hpp>

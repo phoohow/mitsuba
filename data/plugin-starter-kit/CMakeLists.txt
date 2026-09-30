@@ -1,0 +1,1 @@
+mitsuba_add_plugin(myutil "${CMAKE_CURRENT_SOURCE_DIR}/myutil.cpp")

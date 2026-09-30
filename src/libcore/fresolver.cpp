@@ -1,5 +1,6 @@
 #include <mitsuba/core/fresolver.h>
 #include <boost/algorithm/string.hpp>
+#include <string>
 
 #if defined(__LINUX__)
 # if !defined(_GNU_SOURCE)
@@ -78,7 +79,7 @@ FileResolver::FileResolver() {
 
     // There is an error if and only if the function returns 0
     if (nSize != 0)
-        basePath = fs::path(lpFilename).parent_path();
+        basePath = fs::path(std::wstring(lpFilename.begin(), lpFilename.begin() + nSize)).parent_path();
     else
         Log(EError, "Could not detect the executable path! (%s)", lastErrorText().c_str());
 #endif

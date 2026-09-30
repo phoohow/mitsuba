@@ -13,9 +13,16 @@ The renderer currently runs on Linux, MacOS X and Microsoft Windows and makes us
 
 Mitsuba comes with a command-line interface as well as a graphical frontend to interactively explore scenes. While navigating, a rough preview is shown that becomes increasingly accurate as soon as all movements are stopped. Once a viewpoint has been chosen, a wide range of rendering techniques can be used to generate images, and their parameters can be tuned from within the program.
 
-## Documentation
+## Building from source
 
-For compilation, usage, and a full plugin reference, please see the [official documentation](http://mitsuba-renderer.org/docs.html).
+Mitsuba uses CMake 3.16 or later and requires a C++11-compatible compiler and Boost 1.80 or later. The precompiled `dependencies` bundle contains only some third-party libraries; other required libraries must be installed separately. Qt 5.9 or later is required to build the graphical interface.
+
+```sh
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --parallel
+```
+
+See the [compilation guide](doc/compiling.tex) for dependency details, optional components, and installation instructions.
 
 ## Releases and scenes
 

@@ -20,6 +20,7 @@
 #if !defined(__MITSUBA_CORE_KDTREE_H_)
 #define __MITSUBA_CORE_KDTREE_H_
 
+#include <functional>
 #include <mitsuba/core/aabb.h>
 #include <mitsuba/core/timer.h>
 

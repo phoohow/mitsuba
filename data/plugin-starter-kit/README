@@ -1,1 +1,4 @@
-This is a tiny example on how Mitsuba plugins can be developed outside of the main codebase.
+This is a tiny example of a Mitsuba utility plugin. To build it, add
+`add_subdirectory(data/plugin-starter-kit)` to the main Mitsuba
+`CMakeLists.txt`. The `myutil` plugin is built as the
+`mitsuba-plugin-myutil` target.
