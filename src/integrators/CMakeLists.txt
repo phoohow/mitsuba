@@ -20,7 +20,6 @@ endforeach()
 
 mitsuba_add_plugin(irrcache "${CMAKE_CURRENT_SOURCE_DIR}/misc/irrcache.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/misc/irrcache_proc.cpp")
-
 mitsuba_add_plugin(bdpt "${CMAKE_CURRENT_SOURCE_DIR}/bdpt/bdpt.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/bdpt/bdpt_wr.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/bdpt/bdpt_proc.cpp")
 mitsuba_add_plugin(pssmlt "${CMAKE_CURRENT_SOURCE_DIR}/pssmlt/pssmlt.cpp"

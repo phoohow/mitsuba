@@ -23,7 +23,7 @@ libraries on supported platforms. It is only a partial set: libraries not includ
 that bundle must be installed separately or made available to CMake. In particular,
 Boost 1.80 or later is required to build Mitsuba. On Windows, the bundle can be placed
 in the source directory as \code{dependencies}; a different location can be selected
-with \code{-DMITSUBA_DEPENDENCIES_ROOT=...}.
+with \code{-DMITSUBA\_DEPENDENCIES\_ROOT=...}.
 
 The required dependencies include OpenGL, Xerces-C, Eigen 3, GLEW, zlib, and Boost
 1.80 or later. Linux builds additionally require X11 and Xxf86vm development files.
@@ -32,11 +32,11 @@ Package names vary by operating system and distribution.
 The graphical interface is enabled by default when Qt is found. Building it requires
 Qt 5.9 or later, including the Core, Gui, Widgets, OpenGL, Xml, XmlPatterns, and Network
 modules. If Qt is unavailable, CMake skips the GUI; to disable it explicitly, pass
-\code{-DMITSUBA_BUILD_GUI=OFF}.
+\code{-DMITSUBA\_BUILD\_GUI=OFF}.
 
 PNG, JPEG, OpenEXR, and FFTW support is enabled when their development libraries are
 available. The Python module is optional and requires Python 3 development files and
-the matching Boost.Python library; enable it with \code{-DMITSUBA_BUILD_PYTHON=ON}.
+the matching Boost.Python library; enable it with \code{-DMITSUBA\_BUILD\_PYTHON=ON}.
 
 \subsection{Building}
 Configure and build from the root of the source tree:
@@ -55,12 +55,12 @@ select the desired Visual Studio generator when configuring CMake.
 \label{sec:compiling-flags}
 The most commonly adjusted options are passed to CMake during configuration:
 \begin{description}
-\item[\code{MITSUBA_SPECTRUM_SAMPLES}] Number of spectral samples; defaults to 3.
-\item[\code{MITSUBA_SINGLE_PRECISION}] Use single-precision calculations; enabled by default.
-\item[\code{MITSUBA_ENABLE_SSE}] Enable SSE code paths; enabled by default.
-\item[\code{MITSUBA_ENABLE_COHERENT_RT}] Enable coherent ray tracing; enabled by default.
-\item[\code{MITSUBA_DEBUG_CHECKS}] Enable debug checks; enabled by default.
-\item[\code{MITSUBA_BUILD_GUI}] Build the Qt graphical interface when Qt is available; enabled by default.
-\item[\code{MITSUBA_BUILD_COLLADA}] Build COLLADA support when COLLADA DOM is available; enabled by default.
-\item[\code{MITSUBA_BUILD_PYTHON}] Build the Python 3 module; disabled by default.
+\item[\code{MITSUBA\_SPECTRUM\_SAMPLES}] Number of spectral samples; defaults to 3.
+\item[\code{MITSUBA\_SINGLE\_PRECISION}] Use single-precision calculations; enabled by default.
+\item[\code{MITSUBA\_ENABLE\_SSE}] Enable SSE code paths; enabled by default.
+\item[\code{MITSUBA\_ENABLE\_COHERENT\_RT}] Enable coherent ray tracing; enabled by default.
+\item[\code{MITSUBA\_DEBUG\_CHECKS}] Enable debug checks; enabled by default.
+\item[\code{MITSUBA\_BUILD\_GUI}] Build the Qt graphical interface when Qt is available; enabled by default.
+\item[\code{MITSUBA\_BUILD\_COLLADA}] Build COLLADA support when COLLADA DOM is available; enabled by default.
+\item[\code{MITSUBA\_BUILD\_PYTHON}] Build the Python 3 module; disabled by default.
 \end{description}

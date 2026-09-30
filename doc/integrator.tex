@@ -170,7 +170,7 @@ radiance along a ray differential: here, we simply return the stored color
 
 Let's try building the plugin: add the following line to
 \code{src/integrators/CMakeLists.txt}:
-\begin{cpp}
+\begin{cpp}[mathescape=false]
 mitsuba_add_plugin(myIntegrator "${CMAKE_CURRENT_SOURCE_DIR}/myIntegrator.cpp")
 \end{cpp}
 After configuring the project, build the plugin with \code{cmake --build build --target mitsuba-plugin-myIntegrator}.

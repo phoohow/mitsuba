@@ -49,7 +49,7 @@ MTS_EXPORT_UTILITY(ROT13Encoder, "Perform a ROT13 encryption of a string")
 MTS_NAMESPACE_END
 \end{cpp}
 The file must also be added to the build system: add the line
-\begin{shell}
+\begin{shell}[mathescape=false]
 mitsuba_add_plugin(rot13 "${CMAKE_CURRENT_SOURCE_DIR}/rot13.cpp")
 \end{shell}
 to \code{src/utils/CMakeLists.txt}. After compiling with \code{cmake --build build},

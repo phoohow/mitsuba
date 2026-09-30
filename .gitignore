@@ -1,5 +1,14 @@
 # Documentation
-doc/*
+doc/*.aux
+doc/*.bib
+doc/*.bbl
+doc/*.blg
+doc/*.fdb_latexmk
+doc/*.fls
+doc/*.log
+doc/*.xml
+doc/*.gz
+doc/*.toc
 
 # Build-related
 build/*
